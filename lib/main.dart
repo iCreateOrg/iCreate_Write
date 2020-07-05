@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:write/UI/screens/home.dart';
+import 'package:write/UI/pageviews/home.dart';
 import 'package:write/UI/screens/login.dart';
 import 'package:write/UI/screens/splash.dart';
+import 'package:write/UI/widgets/bottombar/bottombar.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Login()
+      home: MyHomePage()
     );
   }
 }
