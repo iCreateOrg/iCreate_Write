@@ -33,6 +33,7 @@ dependencies:
   shared_preferences:
   device_preview:
   flutter_svg: ^0.18.0
+  hooks_riverpod:
 
 dev_dependencies:
   flutter_test:
