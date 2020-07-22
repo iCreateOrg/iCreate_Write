@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:write/services/responsiveness/responsiveness.dart';
-import 'package:write/services/utils/color.dart';
+import 'package:write/core/services/responsiveness/responsiveness.dart';
+import 'package:write/theme/utils/color.dart';
 import 'package:write/widgets/text_field/text_field_widget.dart';
 import 'forgotpassword_view_model.dart';
 

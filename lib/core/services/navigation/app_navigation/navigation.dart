@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 
 import 'package:flutter/material.dart';
-import 'package:write/services/navigation/page_transtions/animations.dart';
+import 'package:write/core/services/navigation/page_transtions/animations.dart';
 
 class Navigation{
 

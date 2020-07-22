@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:write/views/forgotpassword/forgotpassword_view.dart';
 import 'package:write/views/login/login_view.dart';
 
@@ -11,7 +12,7 @@ import 'views/signin/signin_view.dart';
 
 void main() async {
   await LocatorInjector.setupLocator();
-  runApp(MainApplication());
+  runApp(DevicePreview(builder: (BuildContext context) => MainApplication()));
 }
 
 class MainApplication extends StatelessWidget {
@@ -20,6 +21,8 @@ class MainApplication extends StatelessWidget {
     return MultiProvider(
       providers: ProviderInjector.providers,
       child: MaterialApp(
+        locale: DevicePreview.of(context).locale,
+        builder: DevicePreview.appBuilder,
         initialRoute: '/',
         routes: {
           '/login': (context) => LoginView(),

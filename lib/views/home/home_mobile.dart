@@ -10,7 +10,7 @@ class _HomeMobile extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
-          child: Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.white,
         drawer: DrawerWidget(),
         appBar: AppBar(
@@ -25,79 +25,81 @@ class _HomeMobile extends StatelessWidget {
           ],
         ),
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(5.0),
-                child: Container(
-                  margin: const EdgeInsets.only(bottom: 6.0),
-                  decoration: BoxDecoration(
-                      color: Color(0xffF6F8F9),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))),
-                  height: SizeConfig().yMargin(context, 14),
-                  width: width,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Spacer(),
-                            Text(
-                              '10:38AM SUN',
-                              style: GoogleFonts.montserrat(
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          width: SizeConfig().xMargin(context, 7),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border:
-                                        Border.all(width: 2, color: newBlue)),
-                                child: CircleAvatar(
-                                  radius: 23,
-                                  backgroundColor: Colors.red,
-                                ),
-                              ),
+              Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(5.0),
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 6.0),
+                      decoration: BoxDecoration(
+                          color: Color(0xffF6F8F9),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              offset: Offset(0.0, 1.0), //(x,y)
+                              blurRadius: 6.0,
                             ),
-                            Text(
-                              'Good morning, iCreate!',
-                              style: GoogleFonts.montserrat(
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )
+                          ],
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20))),
+                      height: SizeConfig().yMargin(context, 14),
+                      width: width,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            width: 2, color: newBlue)),
+                                    child: CircleAvatar(
+                                      radius: 23,
+                                      backgroundColor: Colors.red,
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  'Good morning, iCreate!',
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize:
+                                          SizeConfig().textSize(context, 2)),
+                                )
+                              ],
+                            ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
+                  Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 8, top: SizeConfig().yMargin(context, 2)),
+                        child: Text(
+                          '10:38AM SUN',
+                          style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w500,
+                              fontSize: SizeConfig().textSize(context, 2)),
+                        ),
+                      )),
+                ],
               ),
               Container(
                 width: width,
-                height: height,
+                // height: height,
                 child: Center(
                   child: Wrap(
                     spacing: 10,

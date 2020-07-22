@@ -119,15 +119,14 @@ class _ItemContainersMobile extends StatelessWidget {
                               color: Color(0xff8A8C92),
                               fontSize: SizeConfig().textSize(context, 1.4)),
                         ),
-                        SizedBox(width: SizeConfig().xMargin(context, 7)),
-                        Expanded(
-                          child: Text(
-                            '21st May, 2020',
-                            style: GoogleFonts.montserrat(
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff27282B),
-                                fontSize: SizeConfig().textSize(context, 1.6)),
-                          ),
+                        // Spacer(),
+                        // SizedBox(width: SizeConfig().xMargin(context, 7)),
+                        Text(
+                          '21st May, 2020',
+                          style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff27282B),
+                              fontSize: SizeConfig().textSize(context, 1.3)),
                         )
                       ],
                     ),
@@ -172,7 +171,7 @@ class _ItemContainersMobile extends StatelessWidget {
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xff27282B),
-                                fontSize: SizeConfig().textSize(context, 1.6)),
+                                fontSize: SizeConfig().textSize(context, 1.3)),
                           ),
                         )
                       ],
