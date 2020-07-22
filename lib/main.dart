@@ -1,24 +1,33 @@
-import 'package:flutter/material.dart';
-import 'package:write/UI/pageviews/home.dart';
-import 'package:write/UI/screens/login.dart';
-import 'package:write/UI/screens/splash.dart';
-import 'package:write/UI/widgets/bottombar/bottombar.dart';
+import 'package:write/views/forgotpassword/forgotpassword_view.dart';
+import 'package:write/views/login/login_view.dart';
 
-void main() {
-  runApp(MyApp());
+import 'core/locator.dart';
+import 'core/providers.dart';
+import 'core/services/navigator_service.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'views/home/home_view.dart';
+import 'views/signin/signin_view.dart';
+
+void main() async {
+  await LocatorInjector.setupLocator();
+  runApp(MainApplication());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MainApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return MultiProvider(
+      providers: ProviderInjector.providers,
+      child: MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/login': (context) => LoginView(),
+          '/signup': (context) => SigninView()
+        },
+        navigatorKey: locator<NavigatorService>().navigatorKey,
+        home: HomeView(),
       ),
-      home: MyHomePage()
     );
   }
 }
