@@ -58,24 +58,29 @@ class _ItemContainersMobile extends StatelessWidget {
                     // SizedBox(height: SizeConfig().yMargin(context, 4)),
                     Row(
                       children: [
-                        Container(
-                          width: SizeConfig().xMargin(context, 16.3),
-                          height: 1,
-                          color: Colors.black45,
-                        ),
                         Expanded(
-                            child: Text(
+                          flex: 2,
+                          child: Container(
+                            width: SizeConfig().xMargin(context, 16),
+                            height: 1,
+                            color: Colors.black45,
+                          ),
+                        ),
+                        Text(
                           '(Note)',
                           style: GoogleFonts.montserrat(
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black45,
-                            fontSize: SizeConfig().textSize(context, 1.7),
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black45,
+                        fontSize: SizeConfig().textSize(context, 1.7),
                           ),
-                        )),
-                        Container(
-                          width: SizeConfig().xMargin(context, 16.3),
-                          height: 1,
-                          color: Colors.black45,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            width: SizeConfig().xMargin(context, 16),
+                            height: 1,
+                            color: Colors.black45,
+                          ),
                         ),
                       ],
                     )

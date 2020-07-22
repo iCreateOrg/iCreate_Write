@@ -11,7 +11,7 @@ class _ItemContainersTablet extends StatelessWidget {
       child: Container(
         // color: Color(0xffF6F8F9),
         width: SizeConfig().xMargin(context, 45),
-        height: SizeConfig().yMargin(context, 25),
+        height: SizeConfig().yMargin(context, 27),
         child: Column(
           children: [
             Container(
@@ -85,97 +85,107 @@ class _ItemContainersTablet extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: EdgeInsets.symmetric(horizontal: 18),
                 child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     SizedBox(height: SizeConfig().yMargin(context, 1)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Length: ',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.normal,
-                              color: Color(0xff8A8C92),
-                              fontSize: SizeConfig().textSize(context, 1.8)),
-                        ),
-                        Text(
-                          '250 words',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff27282B),
-                              fontSize: SizeConfig().textSize(context, 1.8)),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: SizeConfig().yMargin(context, 1)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Created: ',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.normal,
-                              color: Color(0xff8A8C92),
-                              fontSize: SizeConfig().textSize(context, 1.4)),
-                        ),
-                        SizedBox(width: SizeConfig().xMargin(context, 7)),
-                        Expanded(
-                          child: Text(
-                            '21st May, 2020',
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Length: ',
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.normal,
+                                color: Color(0xff8A8C92),
+                                fontSize: SizeConfig().textSize(context, 1.8)),
+                          ),
+                          Spacer(),
+                          Text(
+                            '250 words',
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xff27282B),
-                                fontSize: SizeConfig().textSize(context, 1.3)),
-                          ),
-                        )
-                      ],
+                                fontSize: SizeConfig().textSize(context, 1.8)),
+                          )
+                        ],
+                      ),
                     ),
                     SizedBox(height: SizeConfig().yMargin(context, 1)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Shared: ',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.normal,
-                              color: Color(0xff8A8C92),
-                              fontSize: SizeConfig().textSize(context, 1.4)),
-                        ),
-                        Spacer(),
-                        Expanded(
-                          child: Text(
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Created: ',
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.normal,
+                                color: Color(0xff8A8C92),
+                                fontSize: SizeConfig().textSize(context, 1.4)),
+                          ),
+                          Spacer(),
+                          Expanded(
+                            child: Text(
+                              '21st May, 2020',
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xff27282B),
+                                  fontSize:
+                                      SizeConfig().textSize(context, 1.3)),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: SizeConfig().yMargin(context, 1)),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Shared: ',
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.normal,
+                                color: Color(0xff8A8C92),
+                                fontSize: SizeConfig().textSize(context, 1.4)),
+                          ),
+                          Spacer(),
+                          Text(
                             'Not yet',
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w500,
                                 color: Color(0xff27282B),
                                 fontSize: SizeConfig().textSize(context, 1.6)),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                     SizedBox(height: SizeConfig().yMargin(context, 1)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Last modified: ',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.normal,
-                              color: Color(0xff8A8C92),
-                              fontSize: SizeConfig().textSize(context, 1.4)),
-                        ),
-                        // Spacer(),
-                        Expanded(
-                          child: Text(
-                            '1st July, 2020',
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Last modified: ',
                             style: GoogleFonts.montserrat(
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xff27282B),
-                                fontSize: SizeConfig().textSize(context, 1.3)),
+                                fontWeight: FontWeight.normal,
+                                color: Color(0xff8A8C92),
+                                fontSize: SizeConfig().textSize(context, 1.4)),
                           ),
-                        )
-                      ],
+                          Spacer(),
+                          Expanded(
+                            child: Text(
+                              '1st July, 2020',
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xff27282B),
+                                  fontSize:
+                                      SizeConfig().textSize(context, 1.3)),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
