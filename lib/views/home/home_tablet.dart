@@ -106,7 +106,12 @@ class _HomeTablet extends StatelessWidget {
                     spacing: 10,
                     runSpacing: 10,
                     children: [
-                      ItemContainersWidget(),
+                      GestureDetector(
+                          onTap: () => NavigatorService().navigateToPage(
+                              MaterialPageRoute(
+                                  builder: (context) => NoteScreenView(),
+                                  settings: RouteSettings(name: 'Note'))),
+                          child: ItemContainersWidget()),
                       ItemContainersWidget(),
                       ItemContainersWidget(),
                       ItemContainersWidget(),

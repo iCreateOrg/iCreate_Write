@@ -124,7 +124,7 @@ class _CreateNoteMobile extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(color: Colors.black38, width: 1)),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: DropdownButton(
                           elevation: 0,
                           underline: Container(),
@@ -198,8 +198,18 @@ class _CreateNoteMobile extends StatelessWidget {
                               maxLengthEnforced: false,
                               minLines: null,
                               expands: true,
-                              decoration:
-                                  InputDecoration(border: InputBorder.none),
+                              decoration: InputDecoration(
+                                  // labelText: "Type here...",
+                                  // // alignLabelWithHint: true,
+                                  // labelStyle: GoogleFonts.montserrat(
+                                  //   fontSize: SizeConfig().textSize(context, 3),
+                                  //   fontWeight: FontWeight.normal,
+                                  //   fontStyle: FontStyle.normal,
+                                  //   color: Color(0xffDCCECE),
+                                  //   letterSpacing: 2,
+                                    
+                                  // ),
+                                  border: InputBorder.none),
                             ),
                     ),
                   ),
