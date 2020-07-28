@@ -198,18 +198,8 @@ class _CreateNoteMobile extends StatelessWidget {
                               maxLengthEnforced: false,
                               minLines: null,
                               expands: true,
-                              decoration: InputDecoration(
-                                  // labelText: "Type here...",
-                                  // // alignLabelWithHint: true,
-                                  // labelStyle: GoogleFonts.montserrat(
-                                  //   fontSize: SizeConfig().textSize(context, 3),
-                                  //   fontWeight: FontWeight.normal,
-                                  //   fontStyle: FontStyle.normal,
-                                  //   color: Color(0xffDCCECE),
-                                  //   letterSpacing: 2,
-                                    
-                                  // ),
-                                  border: InputBorder.none),
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
                             ),
                     ),
                   ),

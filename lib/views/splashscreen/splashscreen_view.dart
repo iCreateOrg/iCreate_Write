@@ -23,7 +23,7 @@ class SplashscreenView extends StatelessWidget {
     return ViewModelProvider<SplashscreenViewModel>.withConsumer(
         viewModel: viewModel,
         onModelReady: (viewModel) {
-          Timer(Duration(seconds: 4), () {
+          Timer(Duration(seconds: 10), () {
             NavigatorService().navigateToPageWithReplacement<HomeView>(MaterialPageRoute(
                 builder: (context) => HomeView(),
                 settings: RouteSettings(name: 'Home')));

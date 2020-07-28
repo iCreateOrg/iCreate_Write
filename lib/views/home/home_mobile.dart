@@ -57,14 +57,18 @@ class _HomeMobile extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border:
-                                          Border.all(width: 2, color: newBlue)),
-                                  child: CircleAvatar(
-                                    radius: 23,
-                                    backgroundColor: Colors.red,
+                                child: GestureDetector(
+                                  onTap: () => Navigation()
+                                      .pushTo(ProfileView()),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                            width: 2, color: newBlue)),
+                                    child: CircleAvatar(
+                                      radius: 23,
+                                      backgroundColor: Colors.red,
+                                    ),
                                   ),
                                 ),
                               ),

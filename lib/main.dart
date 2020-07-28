@@ -15,10 +15,10 @@ import 'views/signin/signin_view.dart';
 void main() async {
   await LocatorInjector.setupLocator();
 
-  runApp(
-     MainApplication());
   // runApp(
-  //   DevicePreview(builder: (BuildContext context) => MainApplication()));
+  //    MainApplication());
+  runApp(
+    DevicePreview(builder: (BuildContext context) => MainApplication()));
 }
 
 class MainApplication extends StatelessWidget {
@@ -27,9 +27,8 @@ class MainApplication extends StatelessWidget {
     return MultiProvider(
       providers: ProviderInjector.providers,
       child: MaterialApp(
-        // locale: DevicePreview.of(context).locale,
-        // builder: DevicePreview.appBuilder,
-        // initialRoute: '/',
+        locale: DevicePreview.of(context).locale,
+        builder: DevicePreview.appBuilder,
         onGenerateRoute: generateRoute,
         routes: {
           '/login': (context) => LoginView(),
