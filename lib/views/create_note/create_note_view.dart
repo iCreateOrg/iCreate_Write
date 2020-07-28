@@ -1,4 +1,4 @@
-library note_screen_view;
+library create_note_view;
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider_architecture/provider_architecture.dart';
@@ -8,26 +8,26 @@ import 'package:write/core/services/navigator_service.dart';
 import 'package:write/core/services/responsiveness/altres.dart';
 import 'package:write/core/services/responsiveness/responsiveness.dart';
 import 'package:write/theme/utils/color.dart';
-import 'note_screen_view_model.dart';
+import 'create_note_view_model.dart';
 
-part 'note_screen_mobile.dart';
-part 'note_screen_tablet.dart';
-part 'note_screen_desktop.dart';
+part 'create_note_mobile.dart';
+part 'create_note_tablet.dart';
+part 'create_note_desktop.dart';
 
-class NoteScreenView extends StatelessWidget {
+class CreateNoteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    NoteScreenViewModel viewModel = NoteScreenViewModel();
-    return ViewModelProvider<NoteScreenViewModel>.withConsumer(
+    CreateNoteViewModel viewModel = CreateNoteViewModel();
+    return ViewModelProvider<CreateNoteViewModel>.withConsumer(
       viewModel: viewModel,
       onModelReady: (viewModel) {
         // Do something once your viewModel is initialized
       },
       builder: (context, viewModel, child) {
         return ScreenTypeLayout(
-          mobile: _NoteScreenMobile(viewModel),
-          desktop: _NoteScreenDesktop(viewModel),
-          tablet: _NoteScreenTablet(viewModel),  
+          mobile: _CreateNoteMobile(viewModel),
+          desktop: _CreateNoteDesktop(viewModel),
+          tablet: _CreateNoteTablet(viewModel),  
         );
       }
     );
