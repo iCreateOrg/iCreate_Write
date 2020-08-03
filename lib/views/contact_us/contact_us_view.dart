@@ -5,6 +5,8 @@ import 'package:provider_architecture/provider_architecture.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:write/core/services/navigation/app_navigation/navigation.dart';
+import 'package:write/core/services/responsiveness/altres.dart';
+import 'package:write/core/services/responsiveness/responsiveness.dart';
 import 'package:write/theme/utils/color.dart';
 import 'package:write/views/settings/settings_view.dart';
 import 'contact_us_view_model.dart';
