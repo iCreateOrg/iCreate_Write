@@ -38,8 +38,7 @@ class _ProfileMobile extends StatelessWidget {
                 children: [
                   IconButton(
                     icon: Icon(Icons.home),
-                    onPressed: () =>
-                        Navigation().pushToAndReplace(HomeView()),
+                    onPressed: () => Navigation().pushToAndReplace(HomeView()),
                   ),
                   Text(
                     'Profile',
@@ -342,23 +341,26 @@ class _ProfileMobile extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: Container(
-                        width: McGyver.rsDoubleW(context, 25),
-                        height: McGyver.rsDoubleH(context, 8),
-                        decoration: BoxDecoration(
-                            color: Color(0xfffcfcfd),
-                            borderRadius: BorderRadius.circular(8),
-                            border:
-                                Border.all(width: 1, color: Color(0xff494ec4))),
-                        child: Center(
-                          child: Text(
-                            'EDIT',
-                            style: GoogleFonts.montserrat(
-                              fontSize: SizeConfig().textSize(context, 2.2),
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.normal,
-                              color: Color(0xff000000),
-                              letterSpacing: 2,
+                      child: GestureDetector(
+                        onTap: () => Navigation().pushTo(ProfileEditView()),
+                        child: Container(
+                          width: McGyver.rsDoubleW(context, 25),
+                          height: McGyver.rsDoubleH(context, 8),
+                          decoration: BoxDecoration(
+                              color: Color(0xfffcfcfd),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                  width: 1, color: Color(0xff494ec4))),
+                          child: Center(
+                            child: Text(
+                              'EDIT',
+                              style: GoogleFonts.montserrat(
+                                fontSize: SizeConfig().textSize(context, 2.2),
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.normal,
+                                color: Color(0xff000000),
+                                letterSpacing: 2,
+                              ),
                             ),
                           ),
                         ),
