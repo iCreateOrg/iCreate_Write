@@ -32,7 +32,10 @@ class _DrawerMobile extends StatelessWidget {
           DrawerItemRow(text: 'Profile'),
           DrawerItemRow(text: 'Favorites'),
           DrawerItemRow(text: 'Reminders'),
-          DrawerItemRow(text: 'Settings'),
+          DrawerItemRow(
+            text: 'Settings',
+            onTap: () => Navigation().pushTo(SettingsView()),
+          ),
         ],
       ),
     );
@@ -46,17 +49,20 @@ class DrawerItem extends StatelessWidget {
   const DrawerItem({Key key, this.text, this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: SizeConfig().yMargin(context, 8),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 18.0),
-          child: Text(
-            text,
-            style: GoogleFonts.poppins(
-                fontSize: SizeConfig().textSize(context, 2.6),
-                fontWeight: FontWeight.w600),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: SizeConfig().yMargin(context, 8),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 18.0),
+            child: Text(
+              text,
+              style: GoogleFonts.poppins(
+                  fontSize: SizeConfig().textSize(context, 2.6),
+                  fontWeight: FontWeight.w600),
+            ),
           ),
         ),
       ),
@@ -71,28 +77,31 @@ class DrawerItemRow extends StatelessWidget {
   const DrawerItemRow({Key key, this.text, this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: SizeConfig().yMargin(context, 8),
-        child: Row(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 18.0),
-                child: Text(
-                  text,
-                  style: GoogleFonts.poppins(
-                      fontSize: SizeConfig().textSize(context, 2.6),
-                      fontWeight: FontWeight.w600),
+    return GestureDetector(
+      onTap: onTap,
+          child: Container(
+          height: SizeConfig().yMargin(context, 8),
+          child: Row(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 18.0),
+                  child: Text(
+                    text,
+                    style: GoogleFonts.poppins(
+                        fontSize: SizeConfig().textSize(context, 2.6),
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
-            ),
-            Spacer(),
-            Padding(
-              padding: const EdgeInsets.only(right: 18.0),
-              child: Icon(Icons.account_circle),
-            )
-          ],
-        ));
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(right: 18.0),
+                child: Icon(Icons.account_circle),
+              )
+            ],
+          )),
+    );
   }
 }

@@ -3,8 +3,10 @@ library drawer_widget;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:write/core/services/navigation/app_navigation/navigation.dart';
 import 'package:write/core/services/responsiveness/responsiveness.dart';
 import 'package:write/theme/utils/color.dart';
+import 'package:write/views/settings/settings_view.dart';
 
 part 'drawer_mobile.dart';
 part 'drawer_tablet.dart';

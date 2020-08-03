@@ -7,6 +7,8 @@ class _ProfileEditMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final DateFormat formatter = DateFormat('yyyy-MM-dd');
+    final String formatted = formatter.format(viewModel.birthDate);
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -76,6 +78,9 @@ class _ProfileEditMobile extends StatelessWidget {
                         radius: 50,
                         backgroundColor: Colors.red,
                       ),
+                    ),
+                    SizedBox(
+                      height: McGyver.rsDoubleW(context, 3),
                     ),
                     Align(
                       alignment: Alignment.center,
@@ -224,19 +229,42 @@ class _ProfileEditMobile extends StatelessWidget {
                           width: McGyver.rsDoubleW(context, 5),
                         ),
                         Expanded(
-                          child: Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                    width: 1, color: Color(0xff000693))),
-                            child: Center(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                                child: TextFormField(
-                                  decoration:
-                                      InputDecoration(border: InputBorder.none),
-                                ),
+                          child: GestureDetector(
+                            onTap: () {
+                              DatePicker.showDatePicker(context,
+                                  showTitleActions: true,
+                                  minTime: DateTime(1000, 3, 5),
+                                  maxTime: DateTime(3000, 6, 7),
+                                  theme: DatePickerTheme(
+                                      headerColor: Colors.green,
+                                      backgroundColor: newBlue,
+                                      itemStyle: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
+                                      doneStyle: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16)), onChanged: (date) {
+                                print('change $date in time zone ' +
+                                    date.timeZoneOffset.inHours.toString());
+                              }, onConfirm: (date) {
+                                print('confirm $date');
+                                viewModel.setDate(date);
+                              },
+                                  currentTime: DateTime.now(),
+                                  locale: LocaleType.en);
+                            },
+                            child: Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                      width: 1, color: Color(0xff000693))),
+                              child: Center(
+                                child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8.0),
+                                    child: Text(formatted)),
                               ),
                             ),
                           ),
@@ -246,9 +274,45 @@ class _ProfileEditMobile extends StatelessWidget {
                     SizedBox(
                       height: McGyver.rsDoubleW(context, 5),
                     ),
-                    
                   ],
                 ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Padding(
+              padding: EdgeInsets.only(right: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  FlatButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    color: Colors.green,
+                    onPressed: () {},
+                    child: Text(
+                      'SAVE',
+                      style: GoogleFonts.montserrat(
+                          fontSize: SizeConfig().textSize(context, 2),
+                          color: Colors.white),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  FlatButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    color: Colors.red,
+                    onPressed: () =>
+                        Navigation().pushToAndReplace(ProfileView()),
+                    child: Text(
+                      'CANCEL',
+                      style: GoogleFonts.montserrat(
+                          fontSize: SizeConfig().textSize(context, 2),
+                          color: Colors.white),
+                    ),
+                  ),
+                ],
               ),
             ),
           )
