@@ -238,37 +238,43 @@ class _SettingsMobile extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: McGyver.rsDoubleW(context, 7)),
-                          child: Row(
-                            children: [
-                              Icon(Icons.people),
-                              SizedBox(width: 10),
-                              Text(
-                                'Contact us',
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize:
-                                        SizeConfig().textSize(context, 2.5),
-                                    color: Color(0xff000000)),
-                              )
-                            ],
+                          child: GestureDetector(
+                            onTap: () => Navigation().pushTo(ContactUsView()),
+                            child: Row(
+                              children: [
+                                Icon(Icons.people),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Contact us',
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize:
+                                          SizeConfig().textSize(context, 2.5),
+                                      color: Color(0xff000000)),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: McGyver.rsDoubleW(context, 7)),
-                          child: Row(
-                            children: [
-                              Icon(Icons.help),
-                              SizedBox(width: 10),
-                              Text(
-                                'App Info',
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize:
-                                        SizeConfig().textSize(context, 2.5),
-                                    color: Color(0xff000000)),
-                              )
-                            ],
+                          child: GestureDetector(
+                            onTap: () => Navigation().pushTo(AppInfoView()),
+                            child: Row(
+                              children: [
+                                Icon(Icons.help),
+                                SizedBox(width: 10),
+                                Text(
+                                  'App Info',
+                                  style: GoogleFonts.montserrat(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize:
+                                          SizeConfig().textSize(context, 2.5),
+                                      color: Color(0xff000000)),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         Padding(
