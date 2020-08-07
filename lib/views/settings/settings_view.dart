@@ -9,6 +9,7 @@ import 'package:write/core/services/responsiveness/altres.dart';
 import 'package:write/core/services/responsiveness/responsiveness.dart';
 import 'package:write/theme/utils/color.dart';
 import 'package:write/views/app_info/app_info_view.dart';
+import 'package:write/views/change_password/change_password_view.dart';
 import 'package:write/views/contact_us/contact_us_view.dart';
 import 'package:write/views/home/home_view.dart';
 import 'package:write/views/profile/profile_view.dart';

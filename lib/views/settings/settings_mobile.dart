@@ -164,12 +164,16 @@ class _SettingsMobile extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                             horizontal: McGyver.rsDoubleW(context, 7),
                           ),
-                          child: Text(
-                            'Change Password',
-                            style: GoogleFonts.montserrat(
-                                fontWeight: FontWeight.w500,
-                                fontSize: SizeConfig().textSize(context, 2.5),
-                                color: Color(0xff000000)),
+                          child: GestureDetector(
+                            onTap: () =>
+                                Navigation().pushTo(ChangePasswordView()),
+                            child: Text(
+                              'Change Password',
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: SizeConfig().textSize(context, 2.5),
+                                  color: Color(0xff000000)),
+                            ),
                           ),
                         ),
                         Padding(

@@ -231,28 +231,28 @@ class _ProfileEditMobile extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              DatePicker.showDatePicker(context,
-                                  showTitleActions: true,
-                                  minTime: DateTime(1000, 3, 5),
-                                  maxTime: DateTime(3000, 6, 7),
-                                  theme: DatePickerTheme(
-                                      headerColor: Colors.green,
-                                      backgroundColor: newBlue,
-                                      itemStyle: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18),
-                                      doneStyle: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16)), onChanged: (date) {
-                                print('change $date in time zone ' +
-                                    date.timeZoneOffset.inHours.toString());
-                              }, onConfirm: (date) {
-                                print('confirm $date');
-                                viewModel.setDate(date);
-                              },
-                                  currentTime: DateTime.now(),
-                                  locale: LocaleType.en);
+                              // DatePicker.showDatePicker(context,
+                              //     showTitleActions: true,
+                              //     minTime: DateTime(1000, 3, 5),
+                              //     maxTime: DateTime(3000, 6, 7),
+                              //     theme: DatePickerTheme(
+                              //         headerColor: Colors.green,
+                              //         backgroundColor: newBlue,
+                              //         itemStyle: TextStyle(
+                              //             color: Colors.white,
+                              //             fontWeight: FontWeight.bold,
+                              //             fontSize: 18),
+                              //         doneStyle: TextStyle(
+                              //             color: Colors.white,
+                              //             fontSize: 16)), onChanged: (date) {
+                              //   print('change $date in time zone ' +
+                              //       date.timeZoneOffset.inHours.toString());
+                              // }, onConfirm: (date) {
+                              //   print('confirm $date');
+                              //   viewModel.setDate(date);
+                              // },
+                              //     currentTime: DateTime.now(),
+                              //     locale: LocaleType.en);
                             },
                             child: Container(
                               height: 40,
